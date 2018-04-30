@@ -1,26 +1,30 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Visualnews</title>
-</head>
-<body>
-    <div class="logo">
-        <h2>Visualnews</h2>
-    </div>
-    <header>
-        <nav class="nav-1">
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Registrarce</a></li>
-                <li><a href="#">Iniciar secion</a></li>
+
+{% extends 'visualnews/plantilla_header.html' %}
+
+{% block title %}
+    Visualnews-inicio
+{% endblock %}
+{% block body %}
+    {% for noticia in noticias %}
+        <article class="articulo-main">
+            <header class="cabeza-articulo">
+                <h2 class="titulo">
+                    <a href="{% url 'noticia' noticia.id %}" class="link-titulo">{{noticia.titulo}}</a>
+                    
+                </h2>
+                <h4 class="autor">
+                    {{noticia.autor}}
+                </h4>
+                <p class="fecha">{{noticia.fecha_publicacion}}</p>
+            </header>
+            
+            <footer class="pie-articulo">
+                <div class="puntuacion">
+                    <span class="puntos">Puntos {{noticia.puntos}}</span>
+                </div>
                 
-            </ul>
-        </nav>
-    </header>
-    
-    
-</body>
-</html>
+            </footer>
+        </article>
+    {% endfor %}
+{% endblock %}
+

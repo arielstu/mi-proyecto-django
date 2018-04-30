@@ -1,0 +1,35 @@
+{% extends 'visualnews/plantilla_header.html' %}
+
+{% block title %}
+    Visualnews-noticias
+{% endblock %}
+{% block body %}
+<a href="{% url 'noticia_nueva' %}">Crear nueva noticia</a>
+    {% for noticia in noticias %}
+        <article class="articulo-main">
+            <header class="cabeza-articulo">
+                <h2 class="titulo">
+                    
+                    <a href="{% url 'noticia_editar' noticia.id %}" class="link-titulo">{{noticia.titulo}}</a>
+                </h2>
+                
+                <p class="fecha">{{noticia.fecha_publicacion}}</p>
+            </header>
+            
+            <footer class="pie-articulo">
+                <div class="puntos">
+                   puntos {{noticia.puntos}}
+                </div>
+                
+                    {% if noticia.publico == False %}
+                        <a href="{% url 'publicar' noticia.id %}" class="accion-crud">Publicar</a>
+                    {% else %}
+                        <a href="{% url 'ocultar' noticia.id %}" class="accion-crud">Ocultar</a>
+                    {% endif %}
+                    <a href="{% url 'eliminar' noticia.id %}" class="accion-crud">Elininar</a>
+                    <h6 class="etiquetas">{{noticia.etiquetas}}</h6>
+            </footer>
+        </article>
+
+    {% endfor %}
+{% endblock %}

@@ -1,5 +1,12 @@
-<form method="post">
+{% extends 'visualnews/plantilla_header.html' %}
+
+{% block title %}
+    Visualnews-Registro
+{% endblock %}
+{% block body %}
+<form method="post" class="form-register">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">guardar</button>
 </form>
+{% endblock %}

@@ -1,4 +1,10 @@
-<form method="post">
+{% extends 'visualnews/plantilla_header.html' %}
+
+{% block title %}
+    Visualnews-Registro
+{% endblock %}
+{% block body %}
+<form method="post" class="form-login">
     {% csrf_token %}
     <label for="username">Nombre usuario:</label>
     <input type="text" name="username">
@@ -6,3 +12,4 @@
     <input type="password" name="password">
     <input type="submit" value="Ingresar">
 </form>
+{% endblock %}

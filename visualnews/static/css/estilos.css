@@ -1,0 +1,297 @@
+@import url(normalize.css);
+*{
+    box-sizing: border-box;
+}
+.cuerpo{
+    
+}
+body{
+    margin:0;
+}
+.menu-principal{
+    background-color: #8DCC94;
+    
+}
+.menu-centrar{
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 780px;
+    min-width: 780px;
+    margin: auto;
+}
+.nav-1{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.link-nav-1{
+    padding:.5rem;
+    margin:0 0.2rem;
+    text-decoration: none;
+    color:#fff;
+    border:solid 1px #fff;
+    transition: .2s;
+}
+.link-nav-1:hover{
+    background:#fff;
+    color:#8CE045;
+}
+.usuario{
+    color :#fff;
+    padding:0 1rem;
+}
+.logo{
+    padding:0 1rem;
+    color:#fff;
+}
+.main{
+
+    max-width: 780px;
+    min-width: 780px;
+    margin:1rem auto;
+    
+}
+.articulo-main{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border:solid 2px #03A537;
+    border-radius: 5px;
+    margin:1rem 0;
+    padding:0 1rem;
+    background: #fff;
+}
+.cabeza-articulo{
+    display:flex;
+    flex-wrap: wrap;
+    max-width: 60%;
+}
+.titulo{
+    width:100%;
+    
+}
+.link-titulo{
+    text-decoration: none;
+    color:#03A537;
+    
+}
+.autor,.fecha,.titulo{
+    margin:.2rem 0;
+}
+.link-titulo:hover{
+    opacity: .5;
+    transition: .1s;
+}
+.autor,.fecha{
+    font-size: 0.8rem;
+    color:#4B4B4B;
+    margin-right: 0.5rem;
+}
+.texto{
+    white-space: pre-wrap;
+    text-align: justify;
+    
+}
+.texto p{
+    margin:0;
+}
+.pie-articulo{
+    display:flex;
+    align-items: center;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+.puntos{
+    color:#03A537;
+}
+.form-nueva-noticia{
+    max-width: 550px;
+
+    margin:1rem auto;
+    display:felx;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.form-nueva-noticia input,.form-nueva-noticia textarea{
+    width:100%;
+    min-width: 100%;
+    resize: none;
+    border-radius: 5px;
+    box-shadow: #4B4B4B 0px 0px 5px;
+    border:none;
+    padding:.5rem;
+}
+.form-nueva-noticia label{
+    color:#36623B;
+}
+.form-nueva-noticia button{
+    background: #C3E5A7;
+    border:solid 2px #fff;
+    padding:1rem;
+    color:#4B4B4B;
+    font-size: 1.1rem;
+}
+.form-nueva-noticia button:hover{
+    cursor: pointer;
+    background: #fff;
+    transition: .2s;
+}
+.etiquetas{
+    width:100%;
+    margin:0.3rem;
+}
+.accion-crud{
+    padding:.3rem 1rem;
+    text-decoration: none;
+    background: #8DCC94;
+    border-radius: 5px;
+    color:#fff;
+}
+.accion-crud:hover{
+    background: #fff;
+    transition: .2s;
+    color:#8DCC94;
+}
+.form-login{
+    max-width: 550px;
+    margin:1rem auto;
+    display: flex;
+    flex-direction: column;
+
+}
+.form-login input{
+    padding:.5rem;
+    margin: 1rem 0;
+}
+.form-login input[type="submit"]{
+    background: #C3E5A7;
+    border:solid 2px #fff;
+    
+    color:#4B4B4B;
+    font-size: 1.1rem;
+}
+.form-login input[type="submit"]:hover{
+    cursor: pointer;
+    background: #fff;
+    transition: .2s;
+}
+.form-register{
+    max-width: 550px;
+    margin:1rem auto;
+    display: flex;
+    flex-direction: column;
+}
+.form-register p{
+    margin:0;
+}
+.form-register input{
+    padding:.2rem;
+    margin: .2rem 0;
+    width: 100%;
+}
+.form-register button{
+    background: #C3E5A7;
+    border:solid 2px #fff;
+    
+    color:#4B4B4B;
+    font-size: 1.1rem;
+}
+.form-register button:hover{
+    cursor: pointer;
+    background: #fff;
+    transition: .2s;
+}
+.editar{
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin:1rem 0;
+    padding:1rem 0;
+    background: #8CE045;
+    color:#fff;
+    border-radius: 5px;
+    font-size: 1.3rem;
+}
+.editar:hover{
+    opacity: 0.7;
+}
+.comentarios textarea{
+    width:100%;
+    resize: none;
+    border-radius: 5px;
+    box-shadow: #4B4B4B 0px 0px 5px;
+    border:none;
+    padding:.5rem;
+    height: 100px;
+}
+.comentario{
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    border:solid 2px #36623B;
+    border-radius:5px;
+    padding:1rem;
+}
+.comentario p, .comentario h4{
+    margin: .2rem 0;
+}
+.comentario p{
+    padding:.5rem;
+    border-left: 1px solid #36623B;
+    margin-left: 1rem;
+    width:70%;
+    
+}
+.fecha-comentario{
+    width:100%;
+    margin: 0.2rem 0;
+    font-size: 0.7rem;
+    color:rgb(181, 181, 181);
+}
+.form-puntos{
+    display: flex;
+    align-items: center;
+
+}
+.form-puntos button{
+    padding:.2rem;
+    height: 2rem;
+    background: #fff;
+    border:2px solid #8CE045;
+    
+}
+.form-puntos button:hover{
+    border:2px solid #36623B;
+    cursor: pointer;
+    transition: .2s;
+}
+.form-puntos label{
+    color:#4B4B4B;
+}
+.puntuacion-noticia{
+    color:rgb(80, 121, 211);
+    font-size: 1.5rem;
+}
+.comentar{
+    width:100%;
+    padding:1rem 0;
+    background: #8CE045;
+    color:#fff;
+    border:none;
+    font-size: 1.3rem;
+    border-radius: 5px;
+}
+.comentar:hover{
+    
+    cursor: pointer;
+    opacity: .7;
+    transition: .2s;
+}

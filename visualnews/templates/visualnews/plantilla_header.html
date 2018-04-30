@@ -1,0 +1,49 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Visualnews{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body class="cuerpo">
+    
+    <header class="menu-principal">
+        <div class="menu-centrar">
+            <div class="logo">
+                <h2>Visualnews</h2>
+            </div>
+            <nav class="nav-principal">
+                <ul class="nav-1">
+                    <li ><a href="{% url 'index' %}" class="link-nav-1">Inicio</a></li>
+                    
+                    <li> <a href="{% url 'noticia_nueva' %}" class="link-nav-1">Nueva noticia</a></li>
+                    {% if usuario %}
+                    {% if usuario == 'AnonymousUser' %}
+                        <li><a href="{% url 'registrar' %}" class="link-nav-1">Registrarce</a></li>
+                        <li><a href="{% url 'login' %}"  class="link-nav-1">Iniciar secion</a></li>
+                    {% else %}
+                        
+                        <li><a href="{% url 'logout' %}" class="link-nav-1">Cerrar secion</a></li>
+                        <li><a href="{% url 'noticias' %}" class="link-nav-1">Noticias</a></li>
+                        <li class="usuario">Bienvenido {{usuario}}</li>
+                    {% endif %}
+                    {% else %}
+                        <li><a href="{% url 'registrar' %}" class="link-nav-1">Registrarce</a></li>
+                        <li><a href="{% url 'login' %}" class="link-nav-1">Iniciar secion</a></li>
+                    {% endif %}
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        {% block body%}
+        {% endblock %}
+    </main>
+    
+    
+</body>
+</html>

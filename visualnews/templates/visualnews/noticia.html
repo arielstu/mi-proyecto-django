@@ -1,0 +1,59 @@
+{% extends 'visualnews/plantilla_header.html' %}
+
+{% block title %}
+    Visualnews-inicio-{{noticia.titulo}}
+{% endblock %}
+{% block body %}
+    
+        <article class="articulo">
+            <header class="cabeza_articulo">
+                <h2 class="titulo">
+                    {{noticia.titulo}}
+                </h2>
+                <h4 class="autor">
+                    {{noticia.autor}}
+                </h4>
+                <p>{{noticia.fecha_publicacion}}</p>
+            </header>
+            <div class="texto">
+                <p>
+                    
+                    {{noticia.texto}}
+                    
+                </p>
+            </div>
+            <footer class="pie_articulo">
+                <div class="puntuacion-noticia">
+                    Puntos {{noticia.puntos}}
+                </div>
+                <h6>{{noticia.etiquetas}}</h6>
+                {% if usuario == noticia.autor.username %}
+                    <a href="{% url 'noticia_editar' noticia.id %}" class="editar">Editar</a>
+                {% endif %}
+            </footer>
+            {% if formp != False %}
+            <form method="POST" class="form-puntos">
+                
+                {% csrf_token %}
+                {{ formp.as_p }}
+                
+                <button type="submit">Puntuar</button>
+            </form>
+            {% endif %}
+        </article>
+        <div class="form-comentario">
+            <form method="POST" class="comentarios">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="comentar">Comentar</button>
+            </form>
+        </div>
+        {% for comentario in comentarios %}
+        <div class="comentario">
+            <h4>{{comentario.autor}}</h4>
+            <p>{{comentario.texto}}</p>
+            <h5 class="fecha-comentario">{{comentario.fecha_publicacion}}</h5>
+        </div>
+        {% endfor %}
+    
+{% endblock %}

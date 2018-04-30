@@ -1,0 +1,12 @@
+{% extends 'visualnews/plantilla_header.html' %}
+
+{% block title %}
+    Visualnews-Nueva-noticia
+{% endblock %}
+{% block body %}
+    <form method="POST" class="form-nueva-noticia">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">guardar</button>
+    </form>
+{% endblock %}
