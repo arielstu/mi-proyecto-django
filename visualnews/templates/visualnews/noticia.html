@@ -26,7 +26,16 @@
                 <div class="puntuacion-noticia">
                     Puntos {{noticia.puntos}}
                 </div>
-                <h6>{{noticia.etiquetas}}</h6>
+                <div class="noticia-etiquetas">
+                    {% if etiquetas %}
+                    <span>Etiquetas:</span>
+                    <br>
+                    {% for etiqueta in etiquetas %}
+                    <a href="{% url 'buscar' etiqueta %}" class="link-etiqueta">{{etiqueta}}</a>
+                    {% endfor %}
+                    {% endif %}
+
+                </div>
                 {% if usuario == noticia.autor.username %}
                     <a href="{% url 'noticia_editar' noticia.id %}" class="editar">Editar</a>
                 {% endif %}

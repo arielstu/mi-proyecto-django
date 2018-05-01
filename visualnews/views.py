@@ -22,7 +22,7 @@ class RegistroUsuario(CreateView):
     success_url=reverse_lazy('index')
 
 def inicio(request):
-    noticias=Noticia.objects.filter(publico=True).order_by('fecha_publicacion')
+    noticias=Noticia.objects.filter(publico=True).order_by('-fecha_publicacion')
     usuario=str(request.user)
     return render(request,'visualnews/index.html',{'noticias':noticias,'usuario':usuario})
 
@@ -109,7 +109,9 @@ def noticia(request,id):
         except:
             formp=PuntuacionForm()
     comentarios=Comentario.objects.filter(noticia=noticia).order_by('-fecha_publicacion')
-    return render(request,'visualnews/noticia.html',{'noticia':noticia,'usuario':usuario,'comentarios':comentarios,'form':form,'formp':formp})
+    
+    etiquetas = noticia.etiquetas.replace(' ','').split(',')
+    return render(request,'visualnews/noticia.html',{'noticia':noticia,'usuario':usuario,'comentarios':comentarios,'form':form,'formp':formp,'etiquetas':etiquetas})
 
     
 def noticias(request):
@@ -149,6 +151,11 @@ def eliminar(request,id):
         return redirect('index')
     noticia.delete()
     return redirect('noticias')
+
+def buscar(request,clave):
+    noticias=Noticia.objects.filter(publico=True,etiquetas__contains=clave).order_by('fecha_publicacion')
+    usuario=str(request.user)
+    return render(request,'visualnews/index.html',{'noticias':noticias,'usuario':usuario})
 
  
     

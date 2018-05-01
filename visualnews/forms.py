@@ -24,12 +24,20 @@ class NoticiaForm(forms.ModelForm):
     class Meta:
         model=Noticia
         fields=('titulo','texto','etiquetas')
+        widgets = {
+            'texto': forms.Textarea(attrs={'placeholder': 'Ingresa el texto.'}),
+            'titulo': forms.TextInput(attrs={'placeholder': 'Ingresa el titulo.'}),
+            'etiquetas': forms.TextInput(attrs={'placeholder': 'eje: etiqueta1, etiqueta2, etc.'}),
+        }
 
 class ComentarioForm(forms.ModelForm):
     class Meta:
         model=Comentario
         fields=('texto',)
         labels={'texto':''}
+        widgets = {
+            'texto': forms.Textarea(attrs={'placeholder': 'Deja tu comentario'}),
+        }
 class PuntuacionForm(forms.ModelForm):
     class Meta:
         model=Puntuacion

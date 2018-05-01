@@ -4,7 +4,7 @@
     Visualnews-noticias
 {% endblock %}
 {% block body %}
-<a href="{% url 'noticia_nueva' %}">Crear nueva noticia</a>
+<a href="{% url 'noticia_nueva' %}" class="link-crear-noticia">Crear nueva noticia</a>
     {% for noticia in noticias %}
         <article class="articulo-main">
             <header class="cabeza-articulo">

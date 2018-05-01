@@ -9,6 +9,7 @@ from .views import noticias
 from .views import publicar
 from .views import ocultar
 from .views import eliminar
+from .views import buscar
 from django.contrib.auth.views import login
 from django.contrib.auth.views import logout
 urlpatterns = [
@@ -23,4 +24,5 @@ urlpatterns = [
     path('noticias/publicar/<int:id>/',publicar,name="publicar"),
     path('noticias/ocultar/<int:id>/',ocultar,name="ocultar"),
     path('noticias/eliminar/<int:id>/',eliminar,name="eliminar"),
+    path('noticias/buscar/<str:clave>/',buscar,name="buscar"),
 ]
