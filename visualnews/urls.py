@@ -15,7 +15,7 @@ from django.contrib.auth.views import logout
 urlpatterns = [
     path('registro/',RegistroUsuario.as_view(),name="registrar"),
     path('login/',login,{'template_name':'visualnews/login.html'},name="login"),
-    path('logout/',logout,{'template_name':'visualnews/index.html'},name="logout"),
+    path('logout/',logout,{'template_name':'visualnews/login.html'},name="logout"),
     path('',inicio,name="index"),
     path('noticias/nueva/',noticia_nueva,name="noticia_nueva"),
     path('noticias/editar/<int:id>',noticia_editar,name="noticia_editar"),

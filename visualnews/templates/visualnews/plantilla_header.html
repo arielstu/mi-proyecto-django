@@ -22,17 +22,17 @@
                     <li> <a href="{% url 'noticia_nueva' %}" class="link-nav-1">Nueva noticia</a></li>
                     {% if usuario %}
                     {% if usuario == 'AnonymousUser' %}
-                        <li><a href="{% url 'registrar' %}" class="link-nav-1">Registrarce</a></li>
-                        <li><a href="{% url 'login' %}"  class="link-nav-1">Iniciar secion</a></li>
+                        <li><a href="{% url 'registrar' %}" class="link-nav-1">Registrarse</a></li>
+                        <li><a href="{% url 'login' %}"  class="link-nav-1">Iniciar sesion</a></li>
                     {% else %}
                         
-                        <li><a href="{% url 'logout' %}" class="link-nav-1">Cerrar secion</a></li>
+                        <li><a href="{% url 'logout' %}" class="link-nav-1">Cerrar sesion</a></li>
                         <li><a href="{% url 'noticias' %}" class="link-nav-1">Noticias</a></li>
                         <li class="usuario">Bienvenido {{usuario}}</li>
                     {% endif %}
                     {% else %}
-                        <li><a href="{% url 'registrar' %}" class="link-nav-1">Registrarce</a></li>
-                        <li><a href="{% url 'login' %}" class="link-nav-1">Iniciar secion</a></li>
+                        <li><a href="{% url 'registrar' %}" class="link-nav-1">Registrarse</a></li>
+                        <li><a href="{% url 'login' %}" class="link-nav-1">Iniciar sesion</a></li>
                     {% endif %}
                     
                 </ul>

@@ -12,13 +12,19 @@ class RegistroForm(UserCreationForm):
             'username',
             'first_name',
             'last_name',
-            'email'
+            'email',
         ]
         labels={
             'username':'Nombre de usuario',
             'first_name':'Nombre',
             'last_name':'Appellido',
-            'email':'Correo'
+            'email':'Correo',
+        }
+        widgets = {
+            'username': forms.TextInput(attrs={'placeholder': 'Nombre de usuario'}),
+            'first_name': forms.TextInput(attrs={'placeholder': 'Ingresa tu(s) nombre(s)'}),
+            'last_name': forms.TextInput(attrs={'placeholder': 'Ingresa tu(s) apellido(s)'}),
+            'email': forms.TextInput(attrs={'placeholder': 'Ingresa tu correo electronico'}),
         }
 class NoticiaForm(forms.ModelForm):
     class Meta:
